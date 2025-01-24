@@ -14,7 +14,7 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 40px;
+    font-size: 50px;
 }
 
 /* regole main */
@@ -30,12 +30,14 @@ main{
 .contenitore{
     width: 70%;
     height: 100%;
-    background-color: aqua;
     margin-top: 30px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-content: space-between;
+
+    /* dbug */
+    /* background-color: aqua; */
 
 }
 
@@ -44,27 +46,45 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 32%;
-    height: 400px;
+    width: 30%;
+    padding-bottom: 30px;
     background-color: white;
-    border: 2px solid black;
     margin-bottom: 30px;
     position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    cursor: pointer;
+}
 
+.card:hover{
+    transform: scale(1.2) rotate(15deg) ;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+.card:hover .pin{
+    display: none;
 }
 
 /* modifiche per il contenuto delle card */
 .card-content{
     width: 90%;
     height: 90%;
-    background-color: aqua;
+
+    /* dbag */
+    /* background-color: aqua; */
 }
 
-p{
-    /* font-family: Sometype Mono, monospace; */
+.data{
+    color: gray;
+    font-size: 17px;
+    font-family: Sometype Mono, monospace;
+}
+h2{
+
 }
 
-.puntina{
+.pin{
     position: absolute;
     top: -10px;
 }
@@ -72,7 +92,8 @@ p{
 /* modifiche delle immagini */
 .card-content img{
     width: 100%;
-    height: 80%;
+    height: 90%;
+    padding-bottom: 15px;
 }
 
 
