@@ -1,3 +1,4 @@
+/* modifiche generali */
 *{
     padding: 0;
     margin: 0;
@@ -5,6 +6,7 @@
     font-family: Edu Tas Beginner, sans-serif;;
 }
 
+/* regole header */
 header{
     background-image: url(../img/wall.png);
     width: 100%;
@@ -14,6 +16,8 @@ header{
     align-items: center;
     font-size: 40px;
 }
+
+/* regole main */
 main{
     background-image: url(../img/cork.png);
     width: 100%;
@@ -21,6 +25,8 @@ main{
     display: flex;
     justify-content: center;
 }
+
+/* contenitore del contenuto */
 .contenitore{
     width: 70%;
     height: 100%;
@@ -32,6 +38,8 @@ main{
     align-content: space-between;
 
 }
+
+/* modifiche per ogni card singola */
 .card{
     display: flex;
     justify-content: center;
@@ -44,20 +52,58 @@ main{
     position: relative;
 
 }
+
+/* modifiche per il contenuto delle card */
 .card-content{
     width: 90%;
     height: 90%;
     background-color: aqua;
 }
-.card-content img{
-    width: 100%;
-    height: 80%;
-}
+
 p{
     /* font-family: Sometype Mono, monospace; */
 }
+
 .puntina{
     position: absolute;
     top: -10px;
 }
 
+/* modifiche delle immagini */
+.card-content img{
+    width: 100%;
+    height: 80%;
+}
+
+
+/************************************************
+    SOLUZIONE RESPONSIVE
+ ************************************************/
+ /* versione compitor piu piccola */
+ @media screen and (max-width:1000px) {
+    .contenitore{
+        width: 85%;
+    }
+ }
+ /* versione tablet */
+ @media screen and (max-width:800px) {
+    .contenitore{
+        justify-content: space-around;
+    }
+    .card{
+        width: 45%;
+    }
+ }
+
+ /* versione mobile */
+ @media screen and (max-width:550px) {
+    header{
+        font-size: 30px;
+    }
+    .contenitore{
+        width: 70%;
+    }
+    .card{
+        width: 90%;
+    }
+ }
