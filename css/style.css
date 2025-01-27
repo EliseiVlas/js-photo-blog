@@ -3,7 +3,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: Edu Tas Beginner, sans-serif;;
+    
 }
 
 /* regole header */
@@ -24,6 +24,7 @@ main{
     height: 100%;
     display: flex;
     justify-content: center;
+    font-family: Edu Tas Beginner, sans-serif;;
 }
 
 /* contenitore del contenuto */
@@ -87,6 +88,38 @@ h2{
 .pin{
     position: absolute;
     top: -10px;
+}
+
+/* parte finale del ingadimento del imagine al click */
+.container-foto-max{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+}
+
+/* modifiche imagine pop-up */
+.img-position{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+.img-position img{
+    width: 70%;
+}
+.img-position button{
+    width: 150px;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 /* modifiche delle immagini */

@@ -1,5 +1,6 @@
 // selezioniamo gli elementi di output
 const card = document.querySelector('.contenitore')
+const image = document.querySelector('.img-position')
 console.log(card);
 
 // setto l'endpoint
@@ -31,7 +32,14 @@ axios.get(endpoint)
                 </div>
             </div>
                     `
+                    // image.innerHTML +=`
+                    // <img src="${url}" alt="${title}">
+                    // `
                 }
+                    image.innerHTML =`
+                    <button>chiudi</button>
+                    <img src="${posts[0].url}" alt="${posts[0].title}">
+                    `
                 
             })
             // codice da eseguire in caso di errore
