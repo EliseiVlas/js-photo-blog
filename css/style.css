@@ -101,8 +101,12 @@ h2{
     left: 0;
     width: 100%;
     height: 100%;
-    
+    z-index: 5;
 }
+    /* classe con display none */
+    .none{
+        display: none;
+    }
 
 /* modifiche imagine pop-up */
 .img-position{

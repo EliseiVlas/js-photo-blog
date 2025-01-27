@@ -1,49 +1,59 @@
 // selezioniamo gli elementi di output
-const card = document.querySelector('.contenitore')
-const image = document.querySelector('.img-position')
-console.log(card);
+const card = document.querySelector('.contenitore');
+const image = document.querySelector('.img-position');
+const popUpImage = document.querySelector('.container-foto-max'); 
 
 // setto l'endpoint
+const endpoint = 'https://lanciweb.github.io/demo/api/pictures/';
 
-const endpoint = 'https://lanciweb.github.io/demo/api/pictures/'
-
-// faccio partire la richiesta Ajax verso lAPI per ricevere i dati
+// faccio partire la richiesta Ajax verso l'API per ricevere i dati
 axios.get(endpoint)
-            //codice da eseguire in caso di successo
-            .then(responseObj => {
-                
-                const posts = responseObj.data;
+    .then(responseObj => {
+        const posts = responseObj.data;
 
-                for(let i = 0; i < posts.length; i++) {
-                    let post = posts[i];
-                    console.log(post);
-                    
-                    const  {title, date, url } = post
+        // Genera le card dinamicamente
+        for (let i = 0; i < posts.length; i++) {
+            let post = posts[i];
+            const { title, date, url } = post;
 
-                    card.innerHTML +=`
-            <div class="card">
-                <div class="card-content">
-                    <img src="${url}" alt="">
-                    <span class="data">${date}</span>
-                    <h2>${title.toUpperCase()}</h2>
+            card.innerHTML += `
+                <div class="card">
+                    <div class="card-content">
+                        <img src="${url}" alt="">
+                        <span class="data">${date}</span>
+                        <h2>${title.toUpperCase()}</h2>
+                    </div>
+                    <div class="pin">
+                        <img src="./img/pin.svg" alt="">
+                    </div>
                 </div>
-                <div class="pin">
-                    <img src="./img/pin.svg" alt="">
-                </div>
-            </div>
-                    `
-                    // image.innerHTML +=`
-                    // <img src="${url}" alt="${title}">
-                    // `
-                }
-                    image.innerHTML =`
-                    <button>chiudi</button>
-                    <img src="${posts[0].url}" alt="${posts[0].title}">
-                    `
-                
-            })
-            // codice da eseguire in caso di errore
-            .catch(error => {
-                
-                console.error(error)
-            })
+            `;
+        }
+
+        // Aggiorna l'immagine principale
+        image.innerHTML = `
+            <button class="close">chiudi</button>
+            <img src="${posts[0].url}" alt="${posts[0].title}">
+        `;
+
+        // Seleziona tutte la card sulla pagina
+        const cardButtons = document.querySelectorAll('.card');
+        
+        // Aggiungi event listener per ogni card
+        cardButtons.forEach(cardButton => {
+            cardButton.addEventListener('click', () => {
+                popUpImage.classList.remove('none'); // Mostra il popup
+            });
+        });
+
+        // seleziono il pulsante per chiudere limagine ingrandita
+        const buttonClose = document.querySelector(".close");
+
+        // creo il pulsante per chiudere l'immagine ingrandita
+        buttonClose.addEventListener('click', () => {
+            popUpImage.classList.add('none'); 
+        });
+    })
+    .catch(error => {
+        console.error(error); // Gestisce eventuali errori
+    });
