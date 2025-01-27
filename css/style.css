@@ -10,11 +10,11 @@
 header{
     background-image: url(../img/wall.png);
     width: 100%;
-    height: 20vh;
+    height: 16vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 50px;
+    font-size: 45px;
 }
 
 /* regole main */
@@ -24,10 +24,11 @@ main{
     height: 100%;
     display: flex;
     justify-content: center;
-    font-family: Edu Tas Beginner, sans-serif;;
+    font-family: Edu Tas Beginner, sans-serif;
+    padding-bottom: 70px;
 }
 
-/* contenitore del contenuto */
+/* modifiche del contenuto generale*/
 .contenitore{
     width: 70%;
     height: 100%;
@@ -43,55 +44,61 @@ main{
 }
 
 /* modifiche per ogni card singola */
-.card{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 30%;
-    padding-bottom: 30px;
-    background-color: white;
-    margin-bottom: 30px;
-    position: relative;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.5s ease, box-shadow 0.5s ease;
-    cursor: pointer;
-}
+    .card{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30%;
+        padding-bottom: 30px;
+        background-color: white;
+        margin-bottom: 30px;
+        position: relative;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        transition: transform 0.5s ease, box-shadow 0.5s ease;
+        cursor: pointer;
+    }
 
-.card:hover{
-    transform: scale(1.2) rotate(15deg) ;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    z-index: 2;
-}
+    /* modifiche delle singole card sull'hover */
+    .card:hover{
+        transform: scale(1.2) rotate(15deg) ;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        z-index: 2;
+    }
 
-.card:hover .pin{
-    display: none;
-}
+    /* modifiche delle pin sull'hover della card */
+    .card:hover .pin{
+        display: none;
+    }
 
 /* modifiche per il contenuto delle card */
-.card-content{
-    width: 90%;
-    height: 90%;
+    .card-content{
+        width: 90%;
+        height: 90%;
 
-    /* dbag */
-    /* background-color: aqua; */
-}
+        /* dbag */
+        /* background-color: aqua; */
+    }
 
-.data{
-    color: gray;
-    font-size: 17px;
-    font-family: Sometype Mono, monospace;
-}
-h2{
+    .data{
+        color: gray;
+        font-size: 17px;
+        font-family: Sometype Mono, monospace;
+    }
 
-}
+    .pin{
+        position: absolute;
+        top: -10px;
+    }
 
-.pin{
-    position: absolute;
-    top: -10px;
-}
+    /* modifiche delle immagini */
+    .card-content img{
+        width: 100%;
+        height: 90%;
+        padding-bottom: 15px;
+    }
 
 /* parte finale del ingadimento del imagine al click */
-.container-foto-max{
+.foto-max{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -103,35 +110,27 @@ h2{
     height: 100%;
     z-index: 5;
 }
-    /* classe con display none */
-    .none{
+    /* modifiche imagine pop-up */
+    .img-position{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        justify-content: center;
+        align-items: center;
+    }
+    .img-position img{
+        width: 62%;
+    }
+    .img-position button{
+        width: 150px;
+        padding: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+     /* classe con display none */
+     .none{
         display: none;
     }
-
-/* modifiche imagine pop-up */
-.img-position{
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    justify-content: center;
-    align-items: center;
-}
-.img-position img{
-    width: 70%;
-}
-.img-position button{
-    width: 150px;
-    padding: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-/* modifiche delle immagini */
-.card-content img{
-    width: 100%;
-    height: 90%;
-    padding-bottom: 15px;
-}
 
 
 /************************************************
